@@ -72,3 +72,40 @@ class TrajeDeEntrenamiento inherits Traje {
     if(self.trajeNoEstaDesgastado()) unAumentoDeExperiencia * 2 else unAumentoDeExperiencia
 
 }
+
+class TrajeModularizado inherits Traje {
+
+  const piezas
+
+  override method sufrirDesgaste() {
+    // Esto debería ser un override, porque habría que manejar el desgaste cada pieza del traje (no especifica la consigna)
+  }
+
+  override method disminuirDanioRecibido(unDanioRecibido) = 
+    if(self.trajeNoEstaDesgastado()) self.sumatoriaDeResistenciasDePiezasNoDesgastadas() else unDanioRecibido
+
+  override method trajeNoEstaDesgastado() = piezas.any { pieza => pieza.noEstaDesgastada() }
+
+  method sumatoriaDeResistenciasDePiezasNoDesgastadas() = piezas.sum { pieza => pieza.resistencia() }
+
+  override method aumentarGananciaDeExperiencia(unAumentoDeExperiencia) = self.porcentajeDePiezasNoGastadas() * unAumentoDeExperiencia
+
+  method porcentajeDePiezasNoGastadas() = self.cantidadDePiezasNoGastadas() / piezas.count()
+
+  method cantidadDePiezasNoGastadas() = (piezas.filter { unaPieza => unaPieza.noEstaDesgastada() }).count()
+}
+
+class Pieza {
+
+  var nivelDeDesgaste 
+  const nivelDeResistencia
+
+  method sufrirDesgaste() {
+    // Debería haber un método acá que me permita que sufra un desgaste la pieza para que tenga sentido el "var" en "nivelDesgaste" (no especifica en la consigna)
+  }
+
+  method noEstaDesgastada() = nivelDeDesgaste < 20
+
+  method nivelDeResistencia() = if(self.noEstaDesgastada()) nivelDeResistencia else 0
+
+}
