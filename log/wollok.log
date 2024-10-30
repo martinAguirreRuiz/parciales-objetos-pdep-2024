@@ -1,0 +1,15 @@
+{"level":"info","message":"⌛ Building environment","timeElapsed":211,"timestamp":"2024-10-30T20:57:32.712Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024","timestamp":"2024-10-30T20:57:32.725Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":127,"timestamp":"2024-10-30T20:57:32.854Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":124,"timestamp":"2024-10-30T20:57:32.982Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":173,"timestamp":"2024-10-30T20:57:33.171Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":366,"timestamp":"2024-10-30T20:57:33.538Z"}
+{"level":"info","message":"⌛ Validating DragonBall/dragonBall/example.wlk","timeElapsed":406,"timestamp":"2024-10-30T20:57:33.945Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":208,"timestamp":"2024-10-30T20:57:34.171Z"}
+{"level":"info","message":"⌛ Validating DragonBall/dragonBall/testExample.wtest","timeElapsed":178,"timestamp":"2024-10-30T20:57:34.375Z"}
+{"level":"info","message":"⌛ Validating AmongUs/amongUs/testExample.wtest","timeElapsed":157,"timestamp":"2024-10-30T20:57:34.533Z"}
+{"level":"info","message":"⌛ Validating AmongUs/amongUs/example.wlk","timeElapsed":165,"timestamp":"2024-10-30T20:57:34.704Z"}
+{"level":"info","message":"⌛ Validating DragonBall/dragonBall/example.wlk","timeElapsed":162,"timestamp":"2024-10-30T20:57:34.868Z"}
+{"level":"info","message":"⌛ Validating AmongUs/amongUs/testExample.wtest","timeElapsed":123,"timestamp":"2024-10-30T20:57:35.091Z"}
+{"level":"info","message":"⌛ Validating AmongUs/amongUs/example.wlk","timeElapsed":101,"timestamp":"2024-10-30T20:57:35.194Z"}
+{"level":"info","message":"⌛ Validating DragonBall/dragonBall/testExample.wtest","timeElapsed":141,"timestamp":"2024-10-30T20:57:35.426Z"}
