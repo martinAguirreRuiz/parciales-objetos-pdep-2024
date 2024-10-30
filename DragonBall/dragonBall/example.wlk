@@ -13,6 +13,7 @@ class Guerrero {
   method esAtacado(unGuerrero) {
     self.sufrirPerdidaEnergia(unGuerrero)
     self.sufrirGananciaDeExperiencia()
+    traje.sufrirDesgaste()
   }
 
   method sufrirPerdidaEnergia(unGuerrero) {
@@ -39,16 +40,25 @@ class Guerrero {
 
 class Traje {
   
+  var nivelDeDesgaste = 0
+
+  method sufrirDesgaste() {
+    nivelDeDesgaste += 5
+  }
+
   method disminuirDanioRecibido(unDanioRecibido)
 
   method aumentarGananciaDeExperiencia(unAumentoDeExperiencia)
+
+  method trajeNoEstaDesgastado() = nivelDeDesgaste < 100
 }
 
 class TrajeComun inherits Traje {
 
   const porcentajeDeProteccion
 
-  override method disminuirDanioRecibido(unDanioRecibido) = unDanioRecibido - unDanioRecibido * (porcentajeDeProteccion/10)
+  override method disminuirDanioRecibido(unDanioRecibido) = 
+    if(self.trajeNoEstaDesgastado()) unDanioRecibido - unDanioRecibido * (porcentajeDeProteccion/10) else unDanioRecibido
 
   override method aumentarGananciaDeExperiencia(_unAumentoDeExperiencia) = _unAumentoDeExperiencia
   
@@ -58,6 +68,7 @@ class TrajeDeEntrenamiento inherits Traje {
 
   override method disminuirDanioRecibido(_unDanioRecibido) = _unDanioRecibido
 
-  override method aumentarGananciaDeExperiencia(unAumentoDeExperiencia) = unAumentoDeExperiencia * 2
+  override method aumentarGananciaDeExperiencia(unAumentoDeExperiencia) = 
+    if(self.trajeNoEstaDesgastado()) unAumentoDeExperiencia * 2 else unAumentoDeExperiencia
 
 }
