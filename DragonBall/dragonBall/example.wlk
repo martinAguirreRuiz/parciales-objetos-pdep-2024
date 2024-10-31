@@ -1,6 +1,6 @@
 class Guerrero {
 
-  const potencialOfensivo
+  var potencialOfensivo
   var energia
   var experiencia
   const energiaOriginal = energia
@@ -37,6 +37,58 @@ class Guerrero {
     energia = energiaOriginal
   }
 }
+
+class Saiyan inherits Guerrero {
+  
+  var nivelDeSaiyan = 0 // Empieza en estado base
+  const potencialOfensivoOriginal = potencialOfensivo
+  const porcentajesDanioSegunNivel = [10, 5, 3, 0]
+
+  
+  method convertirseEnSuperSaiyan(unNivel) {
+    if(nivelDeSaiyan == 0){
+      potencialOfensivo *= 1.5
+      nivelDeSaiyan = unNivel
+    }
+  }
+
+  override method esAtacado(unGuerrero) {
+    //super() //Lo comento porque da error, no sé por que
+    self.chequearEnergia()
+  }
+
+  override method calcularDanioRecibido(unGuerrero) {
+    const porcentajeDeDanio = porcentajesDanioSegunNivel.get(nivelDeSaiyan)
+    const danioRecibido = unGuerrero.porcentajeDelPotencialOfensivo(porcentajeDeDanio)
+    return traje.disminuirDanioRecibido(danioRecibido)
+  }
+
+  method volverAEstadoBase() {
+    if(nivelDeSaiyan != 0){
+      potencialOfensivo *= 0.6666
+    }
+  }
+
+  method chequearEnergia() {
+    if(self.energiaBaja()){
+      self.volverAEstadoBase()
+    }
+  }
+
+  method energiaBaja() = energia <= energiaOriginal * 0.01
+
+  override method comerSemillaDelErmitanio() {
+    super()
+    self.aumentarPotencialOfensivo()
+  }
+
+  method aumentarPotencialOfensivo() {
+    potencialOfensivo += potencialOfensivoOriginal * 0.05
+  }
+
+}
+
+
 
 class Traje {
   
