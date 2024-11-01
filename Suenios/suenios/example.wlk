@@ -52,7 +52,7 @@ class Persona {
 
 }
 
-class Suenio {
+class Suenio { 
 
   const felicidadAAumentar
 
