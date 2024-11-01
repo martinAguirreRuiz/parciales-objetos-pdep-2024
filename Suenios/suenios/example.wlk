@@ -5,6 +5,7 @@ class Persona {
   const carreraDeseada
   const carrerasEstudiadas = []
   var nivelDeFelicidad = 0
+  const tipoDePersona
 
   method cumplirUnSuenio(unSuenio) {
     if(!sueniosPendientes.contains(unSuenio)) {
@@ -29,6 +30,13 @@ class Persona {
     nivelDeFelicidad += unaFelicidad
   }
 
+  method yaEstudioLaCarrera(unaCarrera) = carrerasEstudiadas.contains(unaCarrera)
+
+  method cumplirSuenioElegido() {
+    const suenioElegido = tipoDePersona.elegirSuenio(sueniosPendientes)
+    self.cumplirUnSuenio(suenioElegido)
+  }
+
 }
 
 class Suenio {
@@ -43,7 +51,9 @@ class Suenio {
   
 }
 
-class RecibirseDeIngenieroEnSistemas inherits Suenio {
+class Recibirse inherits Suenio {
+
+  const carrera = ingenieriaEnSistemas
 
   override method cumplirse(unaPersona) {
     
@@ -55,18 +65,16 @@ class RecibirseDeIngenieroEnSistemas inherits Suenio {
   }
 
   override method validarSuenio(unaPersona) {
-    if(unaPersona.carreraDeseada() != ingenieriaEnSistemas){
-      throw new DomainException(message = "La persona no quiere estudiar Ingenieria en Sistemas")
+    if(unaPersona.carreraDeseada() != carrera){
+      throw new DomainException(message = "La persona no quiere estudiar esta carrera")
+    }else if(unaPersona.yaEstudioLaCarrera(carrera)){
+      throw new DomainException(message = "Esta persona ya se recibió de esta carrera")
     }
   }
 
   override method realizarSuenio(unaPersona) {
-
     unaPersona.agregarCarreraEstudiada(ingenieriaEnSistemas)
-    
   }
-
-
 }
 
 class SuenioMultiple inherits Suenio {
@@ -95,4 +103,14 @@ object ingenieriaEnSistemas {
 object odontologia {
 }
 object psicologia {
+}
+
+object realista {
+  method elegirSuenio(sueniosPendientes) = sueniosPendientes.max { unSuenio => unSuenio.felicidadAAumentar() }
+}
+object alocado {
+  method elegirSuenio(sueniosPendientes) = sueniosPendientes.anyOne()
+}
+object obsesivo {
+  method elegirSuenio(sueniosPendientes) = sueniosPendientes.first()
 }
