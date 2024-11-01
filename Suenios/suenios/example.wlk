@@ -41,6 +41,15 @@ class Persona {
 
   method sumarPotencialFelicidad() = sueniosPendientes.sum { unSuenio => unSuenio.felicidadAAumentar() }
 
+  method esAmbiciosa() = self.cantidadDeSueniosFelices() > 3
+
+  method cantidadDeSueniosFelices() {
+    var contadorDeSueniosFelices = 0
+    sueniosCumplidos.forEach { unSuenio => if(unSuenio.esAmbicioso()) contadorDeSueniosFelices += 1 }
+    sueniosPendientes.forEach { unSuenio => if(unSuenio.esAmbicioso()) contadorDeSueniosFelices += 1 }
+    return contadorDeSueniosFelices
+  }
+
 }
 
 class Suenio {
@@ -52,6 +61,8 @@ class Suenio {
   method realizarSuenio(unaPersona)
 
   method felicidadAAumentar() = felicidadAAumentar
+
+  method esAmbicioso() = felicidadAAumentar > 100
   
 }
 
