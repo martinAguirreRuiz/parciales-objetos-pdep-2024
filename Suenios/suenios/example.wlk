@@ -37,6 +37,10 @@ class Persona {
     self.cumplirUnSuenio(suenioElegido)
   }
 
+  method esFeliz() = nivelDeFelicidad > self.sumarPotencialFelicidad()
+
+  method sumarPotencialFelicidad() = sueniosPendientes.sum { unSuenio => unSuenio.felicidadAAumentar() }
+
 }
 
 class Suenio {
