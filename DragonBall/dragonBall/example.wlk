@@ -36,6 +36,11 @@ class Guerrero {
   method comerSemillaDelErmitanio() {
     energia = energiaOriginal
   }
+
+  method potencialOfensivo() = potencialOfensivo
+
+  method elementosEnSuTraje() = traje.elementos()
+
 }
 
 class Saiyan inherits Guerrero {
@@ -88,8 +93,6 @@ class Saiyan inherits Guerrero {
 
 }
 
-
-
 class Traje {
   
   var nivelDeDesgaste = 0
@@ -103,6 +106,8 @@ class Traje {
   method aumentarGananciaDeExperiencia(unAumentoDeExperiencia)
 
   method trajeNoEstaDesgastado() = nivelDeDesgaste < 100
+
+  method elementos() = 1
 }
 
 class TrajeComun inherits Traje {
@@ -145,6 +150,8 @@ class TrajeModularizado inherits Traje {
   method porcentajeDePiezasNoGastadas() = self.cantidadDePiezasNoGastadas() / piezas.count()
 
   method cantidadDePiezasNoGastadas() = (piezas.filter { unaPieza => unaPieza.noEstaDesgastada() }).count()
+
+  override method elementos() = piezas.count()
 }
 
 class Pieza {
@@ -160,4 +167,48 @@ class Pieza {
 
   method nivelDeResistencia() = if(self.noEstaDesgastada()) nivelDeResistencia else 0
 
+}
+
+class Modalidad {
+
+  const peleadores
+
+  method seleccionarPeleadores()
+}
+
+object powerIsBest inherits Modalidad(peleadores = []) {
+  
+  override method seleccionarPeleadores() = self.ordenarPeleadoresPorMayorPoder().take(16)
+
+  method ordenarPeleadoresPorMayorPoder() = self.ordenarPeleadoresPorMenorPoder().reverse()
+
+  method ordenarPeleadoresPorMenorPoder() = peleadores.sortedBy { unPeleador => unPeleador.potencialOfensivo() }
+  
+}
+
+object funny inherits Modalidad(peleadores = []) {
+  
+  override method seleccionarPeleadores() = self.peleadoresConMasElementosEnSusTrajes().take(16)
+
+  method peleadoresConMasElementosEnSusTrajes() = self.peleadoresConMenosElementosEnSusTrajes().reverse()
+
+  method peleadoresConMenosElementosEnSusTrajes() = peleadores.sortedBy { unPeleador => unPeleador.elementosEnSuTraje() }
+  
+}
+
+object surprise inherits Modalidad(peleadores = []) {
+
+  override method seleccionarPeleadores() = self.seleccionarPeleadoresRecursivo([])
+
+  method seleccionarPeleadoresRecursivo(peleadoresRandom) {
+    if(peleadoresRandom.size() == 16){
+      return peleadoresRandom
+    }else{
+      const peleadorRandom = peleadores.anyOne()
+      if(! peleadoresRandom.contains(peleadorRandom)){
+        peleadoresRandom.add(peleadorRandom)
+      }
+      return self.seleccionarPeleadoresRecursivo(peleadoresRandom)
+    }
+  }
 }
