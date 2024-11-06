@@ -1,3 +1,4 @@
+// FILOSOFOS
 class Filosofo {
 
   const nombre
@@ -64,6 +65,14 @@ class Filosofo {
   method mitadDeArgumentosEnriquecedores() = self.cantidadDeArgumentosEnriquecedores() / argumentos.count() >= 0.5
 
   method cantidadDeArgumentosEnriquecedores() = argumentos.filter { unArgumento => unArgumento.esEnriquecedor() }.count()
+
+}
+class FilosofoContemporaneo inherits Filosofo {
+  override method presentarse() = "hola"
+
+  method nivelDeIluminacion() = if(self.amaAdmirarElPaisaje()) nivelDeIluminacion * 5 else nivelDeIluminacion
+
+  method amaAdmirarElPaisaje() = true // No sé cuándo se supone que ama admirar el paisaje
 
 }
 
@@ -171,7 +180,7 @@ class Argumento {
   method descripcionTieneAlMenosXPalabras(unaCantidadDePalabras) = descripcion.split(" ").size() >= unaCantidadDePalabras
   method descripcionTerminaCon(unSufijo) = descripcion.endsWith(unSufijo)
 }
-class ArgumentoDeNaturalezaCombinada inherits Argumento {
+class ArgumentoDeNaturalezasCombinadas inherits Argumento {
   // En este caso "naturaleza" refiere a una lista de naturalezas
   override method esEnriquecedor() = naturaleza.all { unaNaturaleza => unaNaturaleza.esEnriquecedora(self) }
 }
