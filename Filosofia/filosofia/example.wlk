@@ -6,6 +6,7 @@ class Filosofo {
   var nivelDeIluminacion
   var diasVividosEsteAnio
   var edad
+  const argumentos
 
   method presentarse() = self.honorificosFormateados() + " " + nombre
   
@@ -59,6 +60,10 @@ class Filosofo {
   method rejuvenecer(unosDias) {
     diasVividosEsteAnio -= unosDias
   }
+
+  method mitadDeArgumentosEnriquecedores() = self.cantidadDeArgumentosEnriquecedores() / argumentos.count() >= 0.5
+
+  method cantidadDeArgumentosEnriquecedores() = argumentos.filter { unArgumento => unArgumento.esEnriquecedor() }.count()
 
 }
 
@@ -137,14 +142,38 @@ object waterpolo inherits Polo {
 }
 
 
+// DISCUSIONES
+class Discusion {
+  
+  const unPartido
+  const otroPartido
+
+  method esBuena() = unPartido.esBueno() and otroPartido.esBueno()
+}
+
+
+// PARTIDOS
+class Partido {
+
+  const filosofo
+
+  method esBueno() = filosofo.mitadDeArgumentosEnriquecedores() and filosofo.estaEnLoCorrecto()
+}
+
+
 // ARGUMENTOS
 class Argumento {
   const descripcion
   const naturaleza
+
   method esEnriquecedor() = naturaleza.esEnriquecedora(self)
 
   method descripcionTieneAlMenosXPalabras(unaCantidadDePalabras) = descripcion.split(" ").size() >= unaCantidadDePalabras
   method descripcionTerminaCon(unSufijo) = descripcion.endsWith(unSufijo)
+}
+class ArgumentoDeNaturalezaCombinada inherits Argumento {
+  // En este caso "naturaleza" refiere a una lista de naturalezas
+  override method esEnriquecedor() = naturaleza.all { unaNaturaleza => unaNaturaleza.esEnriquecedora(self) }
 }
 
 
