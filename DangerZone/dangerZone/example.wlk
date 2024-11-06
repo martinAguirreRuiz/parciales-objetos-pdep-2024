@@ -145,7 +145,7 @@ class Empleado {
     habilidades.add(unaHabilidad)
   }
 
-  method cambiarDePuesto(unNuevoPuesto) {
+  method puesto(unNuevoPuesto) {
     puesto = unNuevoPuesto
   }
 
@@ -181,7 +181,7 @@ class Oficinista {
 
   method chequearCambioDePuesto(unEmpleado) {
     if(estrellas > 3){
-      unEmpleado.cambiarDePuesto(espia)
+      unEmpleado.puesto(espia) // Acá "rompo" el encapsulamiento, pero no estoy acoplando nada más, porque ya se encuentra acoplado el puesto al empleado. 
     }
   }
 
