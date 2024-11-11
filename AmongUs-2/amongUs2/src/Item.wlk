@@ -6,3 +6,5 @@ object bolsaDeConsorcio {
 }
 object tuboDeOxigeno {
 }
+object votoEnBlanco {
+}
