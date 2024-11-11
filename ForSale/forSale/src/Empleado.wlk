@@ -3,6 +3,7 @@ class Empleado {
   var totalDeComisiones = 0
   var totalDeOperacionesCerradas = 0
   var totalDeReservas = 0
+  const operacionesRealizadas = #{}
 
   method totalDeUnCriterio(unCriterio) = unCriterio // Esto puede ser total de comisiones, operaciones cerradas o reservas
 
@@ -20,5 +21,14 @@ class Empleado {
     unInmueble.reservarse(unCliente)
     totalDeReservas += 1
   }
+
+  method tieneProblemasCon(unEmpleado) = self.ambosCerraronOperacionesEnUnaZona(unEmpleado) and self.algunoConcretoOperacionDelOtro()
+
+
+  // TODO
+  method ambosCerraronOperacionesEnUnaZona(unEmpleado) = true
+  // TODO
+
+  method algunoConcretoOperacionDelOtro() = true
   
 }

@@ -1,9 +1,10 @@
 import src.Reserva.*
+import src.Operacion.*
 
 class Inmueble {
 
     var reserva
-    const operacion
+    var operacion
     const metrosCuadrados
     const cantidadDeAmbientes
     const zona
@@ -23,6 +24,7 @@ class Inmueble {
     method realizarOperacion(unEmpleado) {
         const comision = operacion.comision(self.valorDelInmueble())
         unEmpleado.sumarComision(comision)
+        unEmpleado.agregarOperacion(operacion)
     }
 
     method valorDelInmueble() = zona.valorPorZona()
@@ -45,5 +47,27 @@ class PentHouse inherits Inmueble {
 class Departamento inherits Inmueble {
 
     override method valorDelInmueble() = super() + 350000 * cantidadDeAmbientes
+  
+}
+
+class Local inherits Casa {
+
+    var tipo
+    // const operacion = new Alquiler(mesesAAlquilar = 12)
+
+    override method valorDelInmueble() = tipo.valorDelInmueble(super())
+
+}
+
+object galpon {
+
+    method valorDelInmueble(unValorDeInmueble) = unValorDeInmueble / 2
+  
+}
+
+object aLaCalle {
+
+    const montoFijo = 100000
+    method valorDelInmueble(_unValorDeInmueble) = montoFijo
   
 }

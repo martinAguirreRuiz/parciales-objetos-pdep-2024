@@ -1,4 +1,5 @@
 class Operacion {
+  const zona
   method comision(unValorDeInmueble) 
 }
  
