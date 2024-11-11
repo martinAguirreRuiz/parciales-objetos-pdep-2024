@@ -29,6 +29,10 @@ class Inmueble {
 
     method valorDelInmueble() = zona.valorPorZona()
 
+    method validarQuePuedeSerVendido() { /* No hace nada */ }
+
+    method zona() = zona
+
 }
 
 class Casa inherits Inmueble {
@@ -53,9 +57,9 @@ class Departamento inherits Inmueble {
 class Local inherits Casa {
 
     var tipo
-    // const operacion = new Alquiler(mesesAAlquilar = 12)
 
     override method valorDelInmueble() = tipo.valorDelInmueble(super())
+    override method validarQuePuedeSerVendido() { throw new DomainException (message = "Un local sólo puede ser alquilado") }
 
 }
 

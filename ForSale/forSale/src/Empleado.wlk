@@ -22,13 +22,15 @@ class Empleado {
     totalDeReservas += 1
   }
 
-  method tieneProblemasCon(unEmpleado) = self.ambosCerraronOperacionesEnUnaZona(unEmpleado) and self.algunoConcretoOperacionDelOtro()
+  method tieneProblemasCon(unEmpleado) = self.ambosCerraronOperacionesEnUnaZona(unEmpleado) and self.algunoConcretoOperacionDelOtro(unEmpleado)
 
+  method ambosCerraronOperacionesEnUnaZona(unEmpleado) = self.zonasOperadas().any { unaZona => unEmpleado.operoEnZona(unaZona) }
+
+  method zonasOperadas() = operacionesRealizadas.map { unaOperacion => unaOperacion.zona() }
+
+  method operoEnZona(unaZona) = self.zonasOperadas().contains(unaZona)
 
   // TODO
-  method ambosCerraronOperacionesEnUnaZona(unEmpleado) = true
-  // TODO
-
-  method algunoConcretoOperacionDelOtro() = true
+  method algunoConcretoOperacionDelOtro(unEmpleado) = true
   
 }

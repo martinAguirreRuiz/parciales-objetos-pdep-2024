@@ -1,6 +1,11 @@
 class Operacion {
-  const zona
+  
+  const inmueble
+
   method comision(unValorDeInmueble) 
+
+  method zona() = inmueble.zona()
+  
 }
  
 class Alquiler inherits Operacion {
