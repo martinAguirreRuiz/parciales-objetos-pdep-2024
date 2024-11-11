@@ -36,6 +36,10 @@ class Impostor inherits Jugador {
     override method completoTodasSusTareas() = true
 
     override method realizarUnaTareaPendiente() { /* No hace nada */ }
+
+    method realizarSabotaje(unSabotaje, unJugador) {
+        unSabotaje.serRealizadoContra(unJugador)
+    }
   
 }
 
