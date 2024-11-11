@@ -2,9 +2,11 @@ class Vikingo {
   
     var castaSocial
     const armas = []
+    var oro
 
     method esProductivo() = castaSocial.puedeSubirAExpedicion(self) 
     method tieneArmas() = !armas.isEmpty()
+    method ganarOro(unaCantidad) { oro += unaCantidad }
 
 }
 

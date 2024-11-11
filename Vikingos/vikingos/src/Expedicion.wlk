@@ -19,6 +19,16 @@ class Expedicion {
     capitalesInvolucradas.all { unaCapital => unaCapital.valeLaPena(vikingosSubidos.size()) 
   }
 
-  
+  method realizarUnaExpedicion() {
+
+    const botinConseguido = 
+      aldeasInvolucradas.sum { unaAldea => unaAldea.botinConseguido(vikingosSubidos.size())} + 
+      capitalesInvolucradas.sum { unaCapital => unaCapital.botinConseguido()}
+
+    const botinPorVikingo = botinConseguido / vikingosSubidos.size()
+
+    vikingosSubidos.forEach { unVikingo => unVikingo.ganarOro(botinPorVikingo) }
+
+  }
 
 }
