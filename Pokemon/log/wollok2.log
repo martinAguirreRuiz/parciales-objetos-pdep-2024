@@ -545,3 +545,7 @@
 {"level":"info","message":"⌛ Building environment","timeElapsed":251,"timestamp":"2024-11-11T12:58:09.366Z"}
 {"level":"info","message":"⌛ Validating pokemon/Condicion.wlk","timeElapsed":148,"timestamp":"2024-11-11T12:58:09.587Z"}
 {"level":"info","message":"⌛ Validating pokemon/Condicion.wlk","timeElapsed":122,"timestamp":"2024-11-11T12:58:09.715Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":430,"timestamp":"2024-11-11T13:27:56.713Z"}
+{"level":"info","message":"⌛ Validating pokemon/Condicion.wlk","timeElapsed":326,"timestamp":"2024-11-11T13:27:57.041Z"}
+{"level":"info","message":"⌛ Validating pokemon/Pokemon.wlk","timeElapsed":187,"timestamp":"2024-11-11T13:27:57.238Z"}
+{"level":"info","message":"⌛ Validating pokemon/Movimiento.wlk","timeElapsed":230,"timestamp":"2024-11-11T13:27:57.469Z"}
