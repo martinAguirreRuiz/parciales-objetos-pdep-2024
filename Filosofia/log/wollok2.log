@@ -686,3 +686,10 @@
 {"level":"info","message":"⌛ Validating filosofia/example.wlk","timeElapsed":106,"timestamp":"2024-11-06T18:18:20.382Z"}
 {"level":"info","message":"⌛ Validating filosofia/example.wlk","timeElapsed":103,"timestamp":"2024-11-06T18:18:20.490Z"}
 {"level":"info","message":"⌛ Building environment","timeElapsed":113,"timestamp":"2024-11-06T18:18:22.360Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":403,"timestamp":"2024-11-10T18:22:29.661Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/Filosofia","timestamp":"2024-11-10T18:22:29.757Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":467,"timestamp":"2024-11-10T18:22:30.225Z"}
+{"level":"info","message":"⌛ Validating filosofia/example.wlk","timeElapsed":294,"timestamp":"2024-11-10T18:22:32.874Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":159,"timestamp":"2024-11-10T18:22:33.036Z"}
+{"level":"info","message":"⌛ Validating filosofia/example.wlk","timeElapsed":630,"timestamp":"2024-11-10T18:22:34.574Z"}
+{"level":"info","message":"⌛ Validating filosofia/testExample.wtest","timeElapsed":556,"timestamp":"2024-11-10T18:22:35.130Z"}
