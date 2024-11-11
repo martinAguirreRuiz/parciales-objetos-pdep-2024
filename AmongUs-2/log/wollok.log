@@ -1,0 +1,15 @@
+{"level":"info","message":"⌛ Building environment","timeElapsed":323,"timestamp":"2024-11-11T19:09:55.976Z"}
+{"level":"info","message":"onRequest - STRONG_FILES_CHANGED:c:\\Users\\Martin Aguirre\\OneDrive\\Documentos\\Facultad\\2º Año\\Paradigmas de Programación\\parciales-objetos-pdep-2024\\AmongUs-2\\amongUs2\\testExample.wtest","timestamp":"2024-11-11T19:09:55.987Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":319,"timestamp":"2024-11-11T19:09:56.307Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":177,"timestamp":"2024-11-11T19:09:56.484Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/AmongUs-2","timestamp":"2024-11-11T19:09:56.487Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":163,"timestamp":"2024-11-11T19:09:56.655Z"}
+{"level":"info","message":"Removing diagnostics from \\Users\\Martin Aguirre\\OneDrive\\Documentos\\Facultad\\2º Año\\Paradigmas de Programación\\parciales-objetos-pdep-2024\\AmongUs-2\\amongUs2\\testExample.wtest","timestamp":"2024-11-11T19:09:56.656Z"}
+{"level":"info","message":"onRequest - STRONG_FILES_CHANGED:c:\\Users\\Martin Aguirre\\OneDrive\\Documentos\\Facultad\\2º Año\\Paradigmas de Programación\\parciales-objetos-pdep-2024\\AmongUs-2\\amongUs2\\example.wlk","timestamp":"2024-11-11T19:09:56.673Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":141,"timestamp":"2024-11-11T19:09:56.815Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/AmongUs-2","timestamp":"2024-11-11T19:09:56.897Z"}
+{"level":"info","message":"⌛ Validating amongUs2/example.wlk","timeElapsed":232,"timestamp":"2024-11-11T19:09:57.130Z"}
+{"level":"info","message":"Removing diagnostics from \\Users\\Martin Aguirre\\OneDrive\\Documentos\\Facultad\\2º Año\\Paradigmas de Programación\\parciales-objetos-pdep-2024\\AmongUs-2\\amongUs2\\example.wlk","timestamp":"2024-11-11T19:09:57.130Z"}
+{"level":"error","message":"✘ Could not produce symbols: document file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/AmongUs-2/amongUs2/example.wlk not found","timestamp":"2024-11-11T19:09:57.242Z"}
+{"level":"error","message":"✘ Could not produce symbols: document file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/AmongUs-2/amongUs2/example.wlk not found","timestamp":"2024-11-11T19:09:57.244Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin%20Aguirre/OneDrive/Documentos/Facultad/2%C2%BA%20A%C3%B1o/Paradigmas%20de%20Programaci%C3%B3n/parciales-objetos-pdep-2024/AmongUs-2","timestamp":"2024-11-11T19:09:57.250Z"}

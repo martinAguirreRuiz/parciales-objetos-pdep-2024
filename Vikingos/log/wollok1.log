@@ -1414,3 +1414,8 @@
 {"level":"info","message":"⌛ Validating vikingos/src/Vikingo.wlk","timeElapsed":135,"timestamp":"2024-11-11T18:44:22.592Z"}
 {"level":"info","message":"⌛ Validating vikingos/src/Vikingo.wlk","timeElapsed":114,"timestamp":"2024-11-11T18:44:22.816Z"}
 {"level":"info","message":"⌛ Validating vikingos/src/Vikingo.wlk","timeElapsed":102,"timestamp":"2024-11-11T18:44:23.008Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":234,"timestamp":"2024-11-11T18:47:35.546Z"}
+{"level":"info","message":"⌛ Validating vikingos/src/Expedicion.wlk","timeElapsed":240,"timestamp":"2024-11-11T18:47:35.793Z"}
+{"level":"info","message":"⌛ Validating vikingos/src/Vikingo.wlk","timeElapsed":134,"timestamp":"2024-11-11T18:47:35.989Z"}
+{"level":"info","message":"⌛ Validating vikingos/src/CastaSocial.wlk","timeElapsed":130,"timestamp":"2024-11-11T18:47:36.120Z"}
+{"level":"info","message":"⌛ Validating vikingos/src/Capital.wlk","timeElapsed":127,"timestamp":"2024-11-11T18:47:36.247Z"}
