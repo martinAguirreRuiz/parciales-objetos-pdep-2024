@@ -24,14 +24,14 @@ object plataforma {
     method promedioPrecioFinal(unPais) {
     
         const juegosAptos = self.obtenerJuegosAptos(unPais)
-        const sumaDePreciosLocal = self.sumaDePreciosLocal(unPais, juegosAptos)
-        const promedio = sumaDePreciosLocal / juegosAptos.size()
-        return promedio
+        const sumaDePrecios = self.sumaDePrecios(juegosAptos)
+        const promedio = sumaDePrecios / juegosAptos.size()
+        return unPais.precioLocal(promedio)
         
     }
 
     method obtenerJuegosAptos(unPais) = juegos.filter { unJuego => unPais.esAptoParaMenores(unJuego) }
 
-    method sumaDePreciosLocal(unPais, juegosAptos) = juegosAptos.sum { unJuego => unPais.precioLocal(unJuego.precio()) }
+    method sumaDePrecios(juegosAptos) = juegosAptos.sum { unJuego => unJuego.precio() }
 
 }
