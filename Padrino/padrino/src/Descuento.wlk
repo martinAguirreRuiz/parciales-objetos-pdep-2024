@@ -1,5 +1,5 @@
 class Descuento {
-    method aplicarDescuento(unPrecio) = 0
+    method aplicarDescuento(unPrecio)
 }
 
 class DescuentoDirecto inherits Descuento {
